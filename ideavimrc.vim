@@ -3,12 +3,14 @@ inoremap jk <esc>
 
 nnoremap ; :
 nnoremap <expr> ; v:count ? ';' : ':'
+
 nnoremap <silent> <M-j> :<C-u>execute 'move ' . (line('.')+1)<CR>
 nnoremap <silent> <M-k> :<C-u>execute 'move ' . (line('.')-2)<CR>
 
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 nnoremap <CR> :normal o<CR>
+
 nnoremap <S-Enter> :normal O<CR>
 nnoremap <Leader>f :action FileStructurePopup<CR>
 nnoremap <Leader>d :action ToggleLineBreakpoint<CR>
@@ -16,14 +18,24 @@ nnoremap <Leader><space> :action GotoFile<CR>
 nnoremap <Leader>: :action ActivateTerminalToolWindow<CR>
 nnoremap <Leader><S-f> :action FindInPath<CR>
 nnoremap <Leader>cp :action ActivatePythonConsoleToolWindow<CR>
+nnoremap <Leader>r :action RenameElement<CR>
+nnoremap <Leader>jk :action ChooseRunConfiguration<CR>
+nnoremap <Leader>xx :action CloseAllEditorsButActive<CR>
+
 nnoremap <C-j> :action ClickLink<CR>
 nnoremap <C-j> :action GotoDeclaration<CR>
-nnoremap <S-A-j> :action ChooseRunConfiguration<CR>
-nnoremap <S-k> :action NextTab<CR>
-nnoremap <S-j> :action PreviousTab<CR>
+nnoremap <S-l> :action NextTab<CR>
+nnoremap <S-H> :action PreviousTab<CR>
+nnoremap <C-[> :action HideActiveWindow<CR>
+nnoremap <C-A-K> :action Forward<CR>
+nnoremap <C-A-J> :action Back<CR>
+nnoremap <S-j> :action CollapseAllRegions<CR>
+nnoremap <S-k> :action ExpandAllRegions<CR>
 
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
+
+xnoremap ,x <ESC>`.``gvp``P
 
 set number
 set updatetime=100
@@ -38,6 +50,7 @@ set autoindent
 set scrolloff=2
 set clipboard+=unnamed
 set easymotion
+set surround
 
 map Q gq
 map tt :NERDTreeToggle<CR>
