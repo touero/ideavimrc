@@ -14,13 +14,16 @@ nnoremap <CR> :normal o<CR>
 nnoremap <S-Enter> :normal O<CR>
 nnoremap <Leader>f :action FileStructurePopup<CR>
 nnoremap <Leader>d :action ToggleLineBreakpoint<CR>
-nnoremap <Leader><space> :action GotoFile<CR>
+nnoremap <Leader><space> :action  GotoFile<CR>
 nnoremap <Leader>: :action ActivateTerminalToolWindow<CR>
 nnoremap <Leader><S-f> :action FindInPath<CR>
 nnoremap <Leader>cp :action ActivatePythonConsoleToolWindow<CR>
 nnoremap <Leader>r :action RenameElement<CR>
 nnoremap <Leader>jk :action ChooseRunConfiguration<CR>
-nnoremap <Leader>xx :action CloseAllEditorsButActive<CR>
+nnoremap <Leader>cl :action CloseAllEditorsButActive<CR>
+nnoremap <Leader>hw :action HideAllWindows<CR>
+nnoremap <Leader>gh :action ActivateVersionControlToolWindow<CR>
+nnoremap <Leader>ee :action ActivateProjectToolWindow<CR>
 
 nnoremap <C-j> :action ClickLink<CR>
 nnoremap <C-j> :action GotoDeclaration<CR>
