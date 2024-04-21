@@ -9,12 +9,13 @@ nnoremap <silent> <M-k> :<C-u>execute 'move ' . (line('.')-2)<CR>
 
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
-nnoremap <CR> :normal o<CR>
 
-nnoremap <S-Enter> :normal O<CR>
+# nnoremap <CR> :normal o<CR>
+# nnoremap <S-Enter> :normal O<CR>
+
 nnoremap <Leader>f :action FileStructurePopup<CR>
 nnoremap <Leader>d :action ToggleLineBreakpoint<CR>
-nnoremap <Leader><space> :action  GotoFile<CR>
+nnoremap <Leader><space> :action GotoFile<CR>
 nnoremap <Leader>: :action ActivateTerminalToolWindow<CR>
 nnoremap <Leader><S-f> :action FindInPath<CR>
 nnoremap <Leader>cp :action ActivatePythonConsoleToolWindow<CR>
@@ -27,16 +28,14 @@ nnoremap <Leader>ee :action ActivateProjectToolWindow<CR>
 
 nnoremap <C-j> :action ClickLink<CR>
 nnoremap <C-j> :action GotoDeclaration<CR>
-nnoremap <S-l> :action NextTab<CR>
-nnoremap <S-H> :action PreviousTab<CR>
-nnoremap <C-[> :action HideActiveWindow<CR>
+nnoremap <S-k> :action NextTab<CR>
+nnoremap <S-j> :action PreviousTab<CR>
 nnoremap <C-A-K> :action Forward<CR>
 nnoremap <C-A-J> :action Back<CR>
-nnoremap <S-j> :action CollapseAllRegions<CR>
-nnoremap <S-k> :action ExpandAllRegions<CR>
 
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
+vnoremap <Leader>ci :action CommentByLineComment<CR><Esc>
 
 xnoremap ,x <ESC>`.``gvp``P
 
@@ -50,7 +49,7 @@ set showcmd
 set tabstop=4
 set noexpandtab
 set autoindent
-set scrolloff=2
+set scrolloff=5
 set clipboard+=unnamed
 set easymotion
 set surround
