@@ -6,6 +6,8 @@ nnoremap <expr> ; v:count ? ';' : ':'
 
 nnoremap <silent> <M-j> :<C-u>execute 'move ' . (line('.')+1)<CR>
 nnoremap <silent> <M-k> :<C-u>execute 'move ' . (line('.')-2)<CR>
+nnoremap <silent> <leader>u :s/\<False\>/True/g<CR>$
+nnoremap <silent> <leader>i :s/\<True\>/False/g<CR>$
 
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
@@ -26,6 +28,8 @@ nnoremap <Leader>hw :action HideAllWindows<CR>
 nnoremap <Leader>gh :action ActivateVersionControlToolWindow<CR>
 nnoremap <Leader>ee :action ActivateProjectToolWindow<CR>
 
+nmap <leader>wj :action MoveTabDown<CR>:action CloseActiveTab<CR>
+
 nnoremap <C-j> :action ClickLink<CR>
 nnoremap <C-j> :action GotoDeclaration<CR>
 nnoremap <S-k> :action NextTab<CR>
@@ -33,9 +37,11 @@ nnoremap <S-j> :action PreviousTab<CR>
 nnoremap <C-A-K> :action Forward<CR>
 nnoremap <C-A-J> :action Back<CR>
 
+
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 vnoremap <Leader>ci :action CommentByLineComment<CR><Esc>
+vnoremap p "_dP
 
 xnoremap ,x <ESC>`.``gvp``P
 
@@ -50,9 +56,10 @@ set tabstop=4
 set noexpandtab
 set autoindent
 set scrolloff=5
-set clipboard+=unnamed
+set clipboard=unnamedplus
 set easymotion
 set surround
+set keep-english-in-normal
 
 map Q gq
 map tt :NERDTreeToggle<CR>
